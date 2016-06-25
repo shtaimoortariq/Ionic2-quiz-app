@@ -1,0 +1,22 @@
+<ion-navbar *navbar primary>
+  <ion-toolbar>
+    <ion-title>Add Quiz</ion-title>
+  </ion-toolbar>
+</ion-navbar>
+
+<ion-content class="home" padding>
+
+    <ion-item>
+      <ion-label floating>Quiz Name</ion-label>
+      <ion-input type="text" [(ngModel)]="quizName"></ion-input>
+    </ion-item>
+   
+    <ion-item>
+      <ion-label floating>No of questions</ion-label>
+      <ion-input type="number" [(ngModel)]="noOfQuizQuestions"></ion-input>
+    </ion-item>
+    
+    <button (click)="myQuiz()" class="top">console</button>
+    <!--[disabled]="!quizName || !noOfQuizQuestions"-->
+
+</ion-content>

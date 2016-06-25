@@ -1,0 +1,21 @@
+<ion-navbar *navbar primary>
+  <ion-toolbar>
+    <ion-title>Quiz App</ion-title>
+  </ion-toolbar>
+</ion-navbar>
+
+<ion-content class="home" padding>
+  
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text" [(ngModel)]="userName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <button block primary (click)="changeTheRoute()"  class="top">Login User</button>
+<!--[disabled]="!userName || !password"-->
+</ion-content>
