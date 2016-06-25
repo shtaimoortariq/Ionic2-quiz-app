@@ -16,10 +16,10 @@ export class AddQuiz {
 
   myQuiz() {
    // this.quizService.setQuizNames(this.quizName);
-   console.log(this.noOfQuizQuestions);
    
     this.nav.push(AddQuizQuestion, {
-      quizName: this.quizName
+      quizName: this.quizName,
+      quizQuestion: this.noOfQuizQuestions
     })
   }
 }

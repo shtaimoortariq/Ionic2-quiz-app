@@ -8,9 +8,12 @@ import {QuizDetailService} from '../../services/quizDetailService';
 })
 
 export class AddQuizQuestion {
-    quizName: any;
+    quizName: string;
+    quizQuestions: number;
     constructor(private params: NavParams) {
         this.quizName = this.params.data.quizName;
-        
+        this.quizQuestions = this.params.data.quizQuestion;
+        console.log(this.quizName);
+        console.log(this.quizQuestions);
      }
 }
