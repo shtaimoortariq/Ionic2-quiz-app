@@ -5,5 +5,21 @@
 </ion-navbar>
 
 <ion-content class="home" padding>
-  
+
+  <ion-item>
+    <ion-label floating>Question</ion-label>
+    <ion-input type="text" [(ngModel)]="quizQuestion"></ion-input>
+  </ion-item>
+
+<div *ngFor="let i of options">
+  <ion-item>
+    <ion-label floating>Option </ion-label>
+    <ion-input type="text" [(ngModel)]="i.option"></ion-input>
+  </ion-item>
+</div>
+
+<button fab (click)="addQuizQuestions()"><ion-icon name="add"></ion-icon></button>
+
+<button block primary (click)="submitQuizQuestion()" class="top">Submit Quiz</button>
+
 </ion-content>
