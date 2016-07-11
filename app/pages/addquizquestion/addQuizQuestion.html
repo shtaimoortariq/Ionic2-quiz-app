@@ -11,15 +11,39 @@
     <ion-input type="text" [(ngModel)]="quizQuestion"></ion-input>
   </ion-item>
 
-<div *ngFor="let i of options">
+  
   <ion-item>
-    <ion-label floating>Option </ion-label>
+    <ion-label>Options Type</ion-label>
+      <ion-select [(ngModel)]="optionsType">
+        <ion-option value="radio">Radio</ion-option>
+        <ion-option value="check box">Check Box</ion-option> 
+      </ion-select>
+  </ion-item>
+
+
+<div *ngFor="let i of options; let k = index">
+  <ion-item>
+    <ion-label floating>Option {{k+1}}</ion-label>
     <ion-input type="text" [(ngModel)]="i.option"></ion-input>
   </ion-item>
+<button fab (click)="addQuizQuestions()" [disabled]="!quizQuestion || !i.option"><ion-icon name="add"></ion-icon></button>
 </div>
 
-<button fab (click)="addQuizQuestions()"><ion-icon name="add"></ion-icon></button>
+ <ion-item>
+    <ion-label>Write Answer</ion-label>
+    <ion-select [(ngModel)]="writeAnswer">
+      <div *ngFor="let i of options; let k = index">
+        <ion-option value="{{k+1}}">Option {{k+1}}</ion-option>
+      </div>
+     
+    </ion-select>
+  </ion-item>
 
-<button block primary (click)="submitQuizQuestion()" class="top">Submit Quiz</button>
 
+<button block primary (click)="submitQuizQuestion()" class="top_addQuiz" [disabled]="!quizQuestion">Submit Question</button>
+<!--<ion-tabs class="tabs-basic">
+      <ion-tab tabTitle="Music" [root]="tabOne"></ion-tab>
+      <ion-tab tabTitle="Movies" [root]="tabTwo"></ion-tab>
+      <ion-tab tabTitle="Games" [root]="tabThree"></ion-tab>
+  </ion-tabs>-->
 </ion-content>
