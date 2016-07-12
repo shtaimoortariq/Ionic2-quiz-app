@@ -14,6 +14,7 @@ export class AddQuizQuestion {
     optionsType        : string;                                    //options array of each questions
     completeQuizQuestion = {question: this.quizQuestion, options: this.options, questionType: this.optionsType};                            //complete QuizQuestion object with question and options 
     optionNumber        : number = 1;
+    flag                : any;
 
 
     constructor(private params: NavParams) {
