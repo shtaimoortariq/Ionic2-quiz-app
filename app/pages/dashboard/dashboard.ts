@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {Alert, NavController} from 'ionic-angular';
 import {AddQuiz} from '../addquiz/addquiz';
+import {AddQuizQuestion} from '../addquizquestion/addquizquestion'
 
 @Component({
   templateUrl: 'build/pages/dashboard/dashboard.html'
@@ -8,12 +9,11 @@ import {AddQuiz} from '../addquiz/addquiz';
 
 export class Dashboard {
   constructor(public nav: NavController) {
-
     
   }
 
   changeTheRoute() {
-    this.nav.push(AddQuiz);
+    this.nav.push(AddQuizQuestion);
 
   }
 

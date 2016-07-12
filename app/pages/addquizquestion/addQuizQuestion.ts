@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, Platform} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import {QuizDetailService} from '../../services/quizDetailService';
 
 @Component({
@@ -14,17 +14,19 @@ export class AddQuizQuestion {
     optionsType        : string;                                    //options array of each questions
     completeQuizQuestion = {question: this.quizQuestion, options: this.options, questionType: this.optionsType};                            //complete QuizQuestion object with question and options 
     optionNumber        : number = 1;
-    flag                : any;
+    tabs                : string         = "Quiz Name"
 
+constructor(private params: NavParams) {
+    this.options.push({
+        option: null
+    });
+}
 
-    constructor(private params: NavParams) {
-        this.quizName = this.params.data.quizName;
-        this.noOfQuizQuestions = this.params.data.quizQuestion;
-        this.options.push({
-            option: null
-        });
-     }
+  myQuiz() {
+      
+  }
 
+    
      addQuizQuestions() {
           this.options.push({
             option: null
