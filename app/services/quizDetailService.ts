@@ -15,7 +15,10 @@ export class QuizDetailService {
     }
 
     getQuizNames() {
-         return Promise.resolve(this.quizNames);
+        console.log(this.quizNames)
+         return new Promise((resolve, reject)=> {
+            resolve(this.quizNames);
+         })
     }
 
 }

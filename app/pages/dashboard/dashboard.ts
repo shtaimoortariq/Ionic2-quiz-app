@@ -6,7 +6,7 @@ import {QuizDetailService} from '../../services/quizDetailService';
 
 @Component({
   templateUrl: 'build/pages/dashboard/dashboard.html',
-  providers: [QuizDetailService]
+  
 })
 
 export class Dashboard {
@@ -17,7 +17,10 @@ export class Dashboard {
   }
 
   inIt() {
-    this.quiz = this.quizDetailService.getQuizNames();
+    this.quizDetailService.getQuizNames().then((newData:any) => {
+      console.log(newData);
+      this.quiz = newData
+    });
     console.log(this.quiz);
   }
 
