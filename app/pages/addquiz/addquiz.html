@@ -1,4 +1,4 @@
-<ion-navbar *navbar primary>
+<!--<ion-navbar *navbar primary>
   <ion-toolbar>
     <ion-title>Add Quiz</ion-title>
   </ion-toolbar>
@@ -17,6 +17,92 @@
     </ion-item>
     
     <button (click)="myQuiz()" class="addQuizTop">Creat Quiz</button>
-    <!--[disabled]="!quizName || !noOfQuizQuestions"-->
+    <!--[disabled]="!quizName || !noOfQuizQuestions"
 
+</ion-content>-->
+
+
+<ion-header>
+  <ion-navbar *navbar primary>
+
+    <ion-title>Creat Quiz</ion-title>
+
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="tabs">
+      <ion-segment-button value="Quiz Name">
+        Quiz Name
+      </ion-segment-button>
+      <ion-segment-button value="Question">
+        Question
+      </ion-segment-button>
+      <ion-segment-button value="Question Options">
+        Question Options
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content class="home" padding>
+
+  <div [ngSwitch]="tabs">
+    <ion-list *ngSwitchWhen="'Quiz Name'">
+      <ion-item>
+        <ion-label floating>Quiz Name</ion-label>
+        <ion-input type="text" [(ngModel)]="quizName"></ion-input>
+      </ion-item>
+
+     
+    </ion-list>
+
+    <ion-list *ngSwitchWhen="'Question'">
+
+
+      <div>
+        <ion-item>
+          <ion-label floating>Question</ion-label>
+          <ion-input type="text" [(ngModel)]="quizQuestion"></ion-input>
+        </ion-item>
+
+        <div *ngFor="let i of options; let k = index;">
+          <ion-item>
+            <ion-label floating>Option {{k+1}}</ion-label>
+            <ion-input type="text" [(ngModel)]="i.option"></ion-input>
+            <ion-icon name="heart"></ion-icon>
+          </ion-item>
+          <button fab (click)="addQuizQuestions()" [disabled]="!quizQuestion || !i.option">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </div>
+      </div>
+
+    </ion-list>
+
+    <ion-list *ngSwitchWhen="'Question Options'">
+      <ion-item>
+        <ion-label>Options Type</ion-label>
+        <ion-select [(ngModel)]="optionsType">
+          <ion-option value="radio">Radio</ion-option>
+          <ion-option value="check box">Check Box</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Right Answer</ion-label>
+        <ion-select [(ngModel)]="rightAnswer">
+          <div *ngFor="let i of options; let k = index">
+            <ion-option value="{{k+1}}">Option {{k+1}}</ion-option>
+          </div>
+
+        </ion-select>
+      </ion-item>
+
+      <button block primary (click)="submitQuizQuestion()">Submit Question</button>
+    </ion-list>
+    
+  </div>
 </ion-content>
+

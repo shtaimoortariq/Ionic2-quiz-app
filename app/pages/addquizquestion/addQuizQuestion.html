@@ -32,8 +32,7 @@
         <ion-input type="text" [(ngModel)]="quizName"></ion-input>
       </ion-item>
 
-      <button (click)="myQuiz()" class="addQuizTop">Add Question</button>
-      <!--[disabled]="!quizName"-->
+     
     </ion-list>
 
     <ion-list *ngSwitchWhen="'Question'">
@@ -69,8 +68,8 @@
       </ion-item>
 
       <ion-item>
-        <ion-label>Write Answer</ion-label>
-        <ion-select [(ngModel)]="writeAnswer">
+        <ion-label>Right Answer</ion-label>
+        <ion-select [(ngModel)]="rightAnswer">
           <div *ngFor="let i of options; let k = index">
             <ion-option value="{{k+1}}">Option {{k+1}}</ion-option>
           </div>
@@ -78,7 +77,9 @@
         </ion-select>
       </ion-item>
 
+      <button block primary (click)="submitQuizQuestion()">Submit Question</button>
     </ion-list>
+    
   </div>
 </ion-content>
 
@@ -120,5 +121,5 @@
     </div>
   
   
-  <button block primary (click)="submitQuizQuestion()" class="top_addQuiz" [disabled]="!quizQuestion || !optionsType || !writeAnswer ">Submit Question</button>
+  <button block primary (click)="submitQuizQuestion()" class="top_addQuiz" [disabled]="!quizQuestion || !optionsType || !writeAnswer">Submit Question</button>
     -->

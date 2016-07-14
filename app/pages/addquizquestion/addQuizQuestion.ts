@@ -1,42 +1,43 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
-import {QuizDetailService} from '../../services/quizDetailService';
+// import {NavController} from 'ionic-angular';
+// import {QuizDetailService} from '../../services/quizDetailService';
+// import {Dashboard} from '../dashboard/dashboard';
 
 @Component({
-    templateUrl: 'build/pages/addquizquestion/addquizquestion.html'
+    template: '<p>Hello world</p>'
+    // templateUrl: 'build/pages/addquizquestion/addquizquestion.html',
+    // providers: [QuizDetailService]
 })
 
 export class AddQuizQuestion {
-    quizName           : string;
-    noOfQuizQuestions  : number;                                                               
-    quizQuestion       : string;                                                                            
-    options: any[]     = [];  
-    optionsType        : string;                                    //options array of each questions
-    completeQuizQuestion = {question: this.quizQuestion, options: this.options, questionType: this.optionsType};                            //complete QuizQuestion object with question and options 
-    optionNumber        : number = 1;
-    tabs                : string         = "Quiz Name"
+    // quizName           : string;
+    // noOfQuizQuestions  : number;                                                               
+    // quizQuestion       : string;                                                                            
+    // options: any[]     = [];  
+    // optionsType        : string;                                    //options array of each questions
+    // completeQuizQuestion = {quizName: this.quizName, question: this.quizQuestion, options: this.options, questionType: this.optionsType, rightAnswer: this.rightAnswer};                            //complete QuizQuestion object with question and options 
+    // optionNumber        : number = 1;
+    // tabs                : string         = "Quiz Name"
+    // rightAnswer         : string;
+    // constructor(private nav: NavController, private quizDetailService: QuizDetailService) {
+    //     this.options.push({
+    //         option: null
+    //     });
+    // }
 
-constructor(private params: NavParams) {
-    this.options.push({
-        option: null
-    });
-}
-
-  myQuiz() {
-      
-  }
-
+    //  addQuizQuestions() {
+    //       this.options.push({
+    //         option: null
+    //     });    
+    //     this.optionNumber++;     
+    //  }
     
-     addQuizQuestions() {
-          this.options.push({
-            option: null
-        });    
-        this.optionNumber++;     
-     }
-    
-    submitQuizQuestion() {
-        this.completeQuizQuestion = {question: this.quizQuestion, options: this.options, questionType: this.optionsType};
-        console.log(this.completeQuizQuestion);
-    }
+    // submitQuizQuestion() {
+    //     this.completeQuizQuestion = {quizName: this.quizName, question: this.quizQuestion, options: this.options, questionType: this.optionsType, rightAnswer: this.rightAnswer};
+    //     console.log(this.completeQuizQuestion);
+    //     this.quizDetailService.setQuizDetail(this.completeQuizQuestion);
+    //     this.nav.push(Dashboard);
+        
+    // }
 
 }

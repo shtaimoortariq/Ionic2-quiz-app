@@ -2,17 +2,20 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class QuizDetailService {
-    quizNames: string[] = [];
+    quizNames: any[] = [];
     
-    constructor() { }
+    constructor() { 
+        console.log("QuizDetailService");
+    }
 
-    setQuizNames(quizName: string) {
-        this.quizNames.push(quizName);
+    setQuizDetail(newData: any) {
+        this.quizNames.push(newData);
         console.log(this.quizNames);
+            
     }
 
     getQuizNames() {
-        return this.quizNames;
+         return Promise.resolve(this.quizNames);
     }
 
 }

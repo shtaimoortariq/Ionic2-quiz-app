@@ -5,7 +5,7 @@ import {Dashboard} from '../dashboard/dashboard';
   templateUrl: 'build/pages/login/login.html'
 })
 export class Login {
-  constructor(public nav: NavController) {
+  constructor(private nav: NavController) {
 
   }
 

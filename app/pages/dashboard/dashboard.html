@@ -5,5 +5,9 @@
 </ion-navbar>
 
 <ion-content class="home" padding>
+
+    <div *ngFor="let i of quiz">
+      {{quiz}}
+    </div>
     <button fab (click)="changeTheRoute()"><ion-icon name="add"></ion-icon></button>
 </ion-content>
