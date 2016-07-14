@@ -30,12 +30,11 @@ import {QuizDetailService} from '../../services/quizDetailService';
 import {Dashboard} from '../dashboard/dashboard';
 
 @Component({
-
     templateUrl: 'build/pages/addquiz/addquiz.html'
 })
 
 export class AddQuiz {
-    temp: any;
+    
     quizName: string;
     noOfQuizQuestions: number;
     quizQuestion: string;
@@ -60,15 +59,14 @@ export class AddQuiz {
 
     submitQuizQuestion() {
         this.completeQuizQuestion = { quizName: this.quizName, question: this.quizQuestion, options: this.options, questionType: this.optionsType, rightAnswer: this.rightAnswer };
-        console.log(this.completeQuizQuestion);
         this.quizDetailService.setQuizDetail(this.completeQuizQuestion);
-        this.temp = this.quizDetailService.getQuizNames().then((dat) => {
-            console.log(dat);
-
-        });
         this.nav.push(Dashboard);
-
-
     }
 
 }
+
+
+// this.temp = this.quizDetailService.getQuizNames().then((dat) => {
+//             console.log(dat);
+
+//         });

@@ -9,13 +9,10 @@ export class QuizDetailService {
     }
 
     setQuizDetail(newData: any) {
-        this.quizNames.push(newData);
-        console.log(this.quizNames);
-            
+        this.quizNames.push(newData);    
     }
 
     getQuizNames() {
-        console.log(this.quizNames)
          return new Promise((resolve, reject)=> {
             resolve(this.quizNames);
          })

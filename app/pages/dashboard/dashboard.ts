@@ -18,14 +18,12 @@ export class Dashboard {
 
   inIt() {
     this.quizDetailService.getQuizNames().then((newData:any) => {
-      console.log(newData);
       this.quiz = newData
     });
-    console.log(this.quiz);
+    
   }
 
   changeTheRoute() {
-    console.log("changeTheRoute",AddQuizQuestion)
     this.nav.push(AddQuiz);
   }
 }

@@ -5,9 +5,17 @@
 </ion-navbar>
 
 <ion-content class="home" padding>
-
-    <div *ngFor="let i of quiz">
-      {{i.quizName}}
-    </div>
-    <button fab (click)="changeTheRoute()"><ion-icon name="add"></ion-icon></button>
+  
+    <ion-card>
+      <ion-list>
+         <button ion-item  *ngFor="let i of quiz">
+           <ion-icon item-left><img src="../../img/quiz-icon.png" /></ion-icon>
+            {{i.quizName}} </button>  
+      </ion-list>
+    </ion-card>    
+  
+  <button fab (click)="changeTheRoute()"><ion-icon name="add"></ion-icon></button>
+<ion-icon name="save"></ion-icon>
 </ion-content>
+
+
