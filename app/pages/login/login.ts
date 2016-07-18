@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
-import {Alert, NavController} from 'ionic-angular';
+import {NavController} from 'ionic-angular';
 import {Dashboard} from '../dashboard/dashboard';
+import {SignUp} from '../signup/signup'
 @Component({
   templateUrl: 'build/pages/login/login.html'
 })

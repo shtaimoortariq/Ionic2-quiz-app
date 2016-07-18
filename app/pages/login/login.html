@@ -1,20 +1,26 @@
-<ion-navbar *navbar primary>
-  <ion-toolbar>
-    <ion-title>Quiz App</ion-title>
-  </ion-toolbar>
-</ion-navbar>
 
 <ion-content class="home" padding>
-  
-  <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input type="text" [(ngModel)]="userName"></ion-input>
-  </ion-item>
+  <center class="appTitle">QUIZ APP</center>
+  <center>
+  <div class="screenWidth">
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="userName"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password" [(ngModel)]="password"></ion-input>
-  </ion-item>
-  <button block primary (click)="changeTheRoute()"  class="top">Login User</button>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    
+  <button round class="signInButtonClass" (click)="changeTheRoute()">Login User</button>
+  <button outline round class="signUpButtonClass">Sign up</button>
+
+  <p class="top">Sign in with</p>
 <!--[disabled]="!userName || !password"-->
+    
+  </div>
+
+  <ion-icon name="facebook"></ion-icon>
+  </center>
 </ion-content>
