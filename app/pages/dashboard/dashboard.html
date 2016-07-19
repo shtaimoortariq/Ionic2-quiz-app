@@ -1,7 +1,11 @@
 <ion-navbar *navbar primary hideBackButton>
   <ion-toolbar>
-    <ion-title>Dashboard</ion-title>
-       <img src="../../img/taimoor.jpg" class=".itemProfileDashborad"/>
+    <ion-title class="top">Dashboard</ion-title>
+         
+        <ion-avatar class="itemProfileDashborad" (click)="signUpPage()">
+          <img src="../../img/taimoor.jpg">
+        </ion-avatar>
+       
   </ion-toolbar>
 </ion-navbar>
 
@@ -9,13 +13,13 @@
   
     <ion-card>
       <ion-list>
-         <button ion-item  *ngFor="let i of quiz">
+         <button ion-item  *ngFor="let i of quiz" (click)="takeQuizPage()">
            <ion-icon item-left><img src="../../img/quiz-icon.png" /></ion-icon>
             {{i.quizName}} </button>  
       </ion-list>
     </ion-card>    
   
-  <button fab (click)="changeTheRoute()"><ion-icon name="add"></ion-icon></button>
+  <button fab (click)="addQuizPage()"><ion-icon name="add"></ion-icon></button>
 </ion-content>
 
 

@@ -28,6 +28,7 @@ import { Component } from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {QuizDetailService} from '../../services/quizDetailService';
 import {Dashboard} from '../dashboard/dashboard';
+import {SignUp} from '../signup/signup';
 
 @Component({
     templateUrl: 'build/pages/addquiz/addquiz.html'
@@ -61,6 +62,10 @@ export class AddQuiz {
         this.completeQuizQuestion = { quizName: this.quizName, question: this.quizQuestion, options: this.options, questionType: this.optionsType, rightAnswer: this.rightAnswer };
         this.quizDetailService.setQuizDetail(this.completeQuizQuestion);
         this.nav.push(Dashboard);
+    }
+
+    signUpPage() {
+        this.nav.push(SignUp);
     }
 
 }

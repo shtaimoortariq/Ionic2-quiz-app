@@ -10,5 +10,6 @@ export class SignUp {
 
     dashboard() {
         this.nav.push(Dashboard);
+        
     }
 }
