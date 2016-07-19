@@ -1,9 +1,35 @@
-<ion-navbar *navbar primary>
-  <ion-toolbar>
-    <ion-title>Sign Up</ion-title>
-  </ion-toolbar>
-</ion-navbar>
+<ion-header>
+    <ion-toolbar class="header" primary>
+        <ion-item class="item-profile">    
+          <img src="../../img/taimoor.jpg" />
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
 
 <ion-content class="home" padding>
- 
+    
+<p primary>Basic Information</p>    
+<ion-item>
+    <ion-label primary floating>Full Name</ion-label>
+    <ion-input type="text" [(ngModel)]="fullName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label primary floating>Email</ion-label>
+    <ion-input type="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+<p primary>Private Information</p>    
+<ion-item>
+    <ion-label primary floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label primary floating>Mobile</ion-label>
+    <ion-input type="number" [(ngModel)]="mobile"></ion-input>
+  </ion-item>
+
+<button block primary (click)="dashboard()">save</button>
 </ion-content>

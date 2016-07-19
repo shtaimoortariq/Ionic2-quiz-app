@@ -13,8 +13,8 @@
       <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
     
-  <button round class="signInButtonClass" (click)="changeTheRoute()">Login User</button>
-  <button outline round class="signUpButtonClass">Sign up</button>
+  <button round class="signInButtonClass" (click)="loginUser()">Login User</button>
+  <button outline round class="signUpButtonClass" (click)="signUpUser()">Sign up</button>
 
   <p class="top">Sign in with</p>
 <!--[disabled]="!userName || !password"-->

@@ -10,8 +10,12 @@ export class Login {
 
   }
 
-  changeTheRoute() {
+  loginUser() {
     this.nav.push(Dashboard);
+  }
+
+ signUpUser() {
+    this.nav.push(SignUp);
   }
 
 }
