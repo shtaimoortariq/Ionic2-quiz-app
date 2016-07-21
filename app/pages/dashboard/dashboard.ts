@@ -1,10 +1,14 @@
 import {Component} from "@angular/core";
 import {Alert, NavController} from 'ionic-angular';
+
 import {AddQuiz} from '../addquiz/addquiz';
 import {AddQuizQuestion} from '../addquizquestion/addquizquestion';
 import {SignUp} from '../signup/signup';
-import {QuizDetailService} from '../../services/quizDetailService';
 import {TakeQuiz} from '../takequiz/takequiz';
+import {Profile} from '../profile/profile';
+
+import {QuizDetailService} from '../../services/quizDetailService';
+
 
 
 @Component({
@@ -36,5 +40,9 @@ export class Dashboard {
 
   takeQuizPage() {
     this.nav.push(TakeQuiz);
+  }
+
+   profilePage() {
+    this.nav.push(Profile);
   }
 }
