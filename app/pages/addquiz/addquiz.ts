@@ -29,6 +29,7 @@ import {NavController} from 'ionic-angular';
 import {QuizDetailService} from '../../services/quizDetailService';
 import {Dashboard} from '../dashboard/dashboard';
 import {SignUp} from '../signup/signup';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
     templateUrl: 'build/pages/addquiz/addquiz.html'
@@ -45,10 +46,14 @@ export class AddQuiz {
     optionNumber: number = 1;
     tabs: string = "Quiz Name"
     rightAnswer: string;
-    constructor(private nav: NavController, private quizDetailService: QuizDetailService) {
+    
+    quiz: FirebaseListObservable<any>;
+
+    constructor(private nav: NavController, private quizDetailService: QuizDetailService, af: AngularFire) {
         this.options.push({
             option: null
         });
+        this.quiz = af.database.list('/quiz');
     }
 
     addQuizQuestions() {
@@ -60,7 +65,7 @@ export class AddQuiz {
 
     submitQuizQuestion() {
         this.completeQuizQuestion = { quizName: this.quizName, question: this.quizQuestion, options: this.options, questionType: this.optionsType, rightAnswer: this.rightAnswer };
-        this.quizDetailService.setQuizDetail(this.completeQuizQuestion);
+        this.quizDetailService.setQuizDetail(this.completeQuizQuestion);    //DataBase
         this.nav.push(Dashboard);
     }
 

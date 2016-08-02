@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Pipe} from "@angular/core";
 import {Alert, NavController} from 'ionic-angular';
 
 import {AddQuiz} from '../addquiz/addquiz';
@@ -8,27 +8,30 @@ import {TakeQuiz} from '../takequiz/takequiz';
 import {Profile} from '../profile/profile';
 
 import {QuizDetailService} from '../../services/quizDetailService';
-
+import {AngularFire, FirebaseObjectObservable, FirebaseListObservable} from 'angularfire2';
 
 
 @Component({
   templateUrl: 'build/pages/dashboard/dashboard.html',
-  
+
 })
 
 export class Dashboard {
 
-  quiz: any[] = [];
-  constructor(private nav: NavController, private quizDetailService: QuizDetailService) {
-    this.inIt();
+  quiz: FirebaseListObservable<any>;
+  constructor(private nav: NavController, private quizDetailService: QuizDetailService, af: AngularFire) {
+
+   this.inIt();
   }
 
   inIt() {
-    this.quizDetailService.getQuizNames().then((newData:any) => {
-      this.quiz = newData
-    });
+    console.log("init");
+    this.quiz = this.quizDetailService.getQuizNames();
+
     
+
   }
+
 
   addQuizPage() {
     this.nav.push(AddQuiz);
@@ -42,7 +45,7 @@ export class Dashboard {
     this.nav.push(TakeQuiz);
   }
 
-   profilePage() {
+  profilePage() {
     this.nav.push(Profile);
   }
 }

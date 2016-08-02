@@ -1,25 +1,25 @@
 <ion-navbar *navbar primary hideBackButton>
   <ion-toolbar>
     <ion-title class="top">Dashboard</ion-title>
-         
-        <ion-avatar class="itemProfileDashborad" (click)="profilePage()">
-          <img src="../../img/taimoor.jpg">
-        </ion-avatar>
-       
+
+    <ion-avatar class="itemProfileDashborad" (click)="profilePage()">
+      <img src="../../img/taimoor.jpg">
+    </ion-avatar>
+
   </ion-toolbar>
 </ion-navbar>
 
 <ion-content class="home" padding>
-  
-    <ion-card>
-      <ion-list>
-         <button ion-item  *ngFor="let i of quiz" (click)="takeQuizPage()">
+
+  <ion-card>
+    <ion-list>
+      <button ion-item  *ngFor="let i of quiz | async"  (click)="takeQuizPage()">
            <ion-icon item-left><img src="../../img/quiz-icon.png" /></ion-icon>
-            {{i.quizName}} </button>  
-      </ion-list>
-    </ion-card>    
-  
+            {{i.quizName}} 
+      </button>  
+      
+    </ion-list>
+  </ion-card>
+
   <button fab (click)="addQuizPage()"><ion-icon name="add"></ion-icon></button>
 </ion-content>
-
-

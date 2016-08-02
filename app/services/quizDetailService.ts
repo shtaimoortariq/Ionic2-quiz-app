@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
+import {AngularFire, FirebaseObjectObservable, FirebaseListObservable} from 'angularfire2';
 
 @Injectable()
 export class QuizDetailService {
     quizNames: any[] = [];
-    
-    constructor() { 
-        console.log("QuizDetailService");
+
+    quiz: FirebaseListObservable<any>;
+    constructor(af: AngularFire) {
+        this.quiz = af.database.list('/quiz');
+        console.log(this.quiz);
     }
 
     setQuizDetail(newData: any) {
-        this.quizNames.push(newData);    
+        this.quiz.push(newData);
     }
 
     getQuizNames() {
-         return new Promise((resolve, reject)=> {
-            resolve(this.quizNames);
-         })
+     this.quiz.subscribe(snapshots => {
+            console.log('sanpshot', snapshots)
+        })
+
+        return this.quiz;
+
     }
 
 }

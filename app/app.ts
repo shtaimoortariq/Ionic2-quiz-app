@@ -3,6 +3,7 @@ import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {Login} from './pages/login/login';
 import {QuizDetailService} from './services/quizDetailService';
+import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>'
@@ -19,6 +20,16 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp,[
-  QuizDetailService
-]);
+
+
+ionicBootstrap(MyApp, [
+  FIREBASE_PROVIDERS,
+  // Initialize Firebase app  
+  defaultFirebase({
+     apiKey: "AIzaSyCpy3zin1OWfPyFNL_dUwDFwxuMCumUKqw",
+    authDomain: "helloworld-797b6.firebaseapp.com",
+    databaseURL: "https://helloworld-797b6.firebaseio.com",
+    storageBucket: "helloworld-797b6.appspot.com",
+  }),
+QuizDetailService
+])
