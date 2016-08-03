@@ -8,6 +8,7 @@ import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>'
 })
+
 export class MyApp {
   rootPage: any = Login;
 
@@ -19,8 +20,6 @@ export class MyApp {
     });
   }
 }
-
-
 
 ionicBootstrap(MyApp, [
   FIREBASE_PROVIDERS,

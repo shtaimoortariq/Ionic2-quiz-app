@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
@@ -13,6 +13,9 @@
     "node_modules",
     "typings/main",
     "typings/main.d.ts"
+  ],
+   "files": [
+    "node_modules/angularfire2/firebase3.d.ts"
   ],
   "compileOnSave": false,
   "atom": {
