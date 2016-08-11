@@ -1,34 +1,10 @@
-<!--<ion-navbar *navbar primary>
-  <ion-toolbar>
-    <ion-title>Add Quiz</ion-title>
-  </ion-toolbar>
-</ion-navbar>
-
-<ion-content class="home" padding>
-
-    <ion-item>
-      <ion-label floating>Quiz Name</ion-label>
-      <ion-input type="text" [(ngModel)]="quizName"></ion-input>
-    </ion-item>
-   
-    <ion-item>
-      <ion-label floating>No of questions</ion-label>
-      <ion-input type="number" [(ngModel)]="noOfQuizQuestions"></ion-input>
-    </ion-item>
-    
-    <button (click)="myQuiz()" class="addQuizTop">Creat Quiz</button>
-    <!--[disabled]="!quizName || !noOfQuizQuestions"
-
-</ion-content>-->
-
-
 <ion-header>
   <ion-navbar *navbar primary>
 
     <ion-title class="top">Creat Quiz</ion-title>
-     <ion-avatar class="itemProfileDashborad" (click)="signUpPage()">
-          <img src="../../img/taimoor.jpg">
-     </ion-avatar>
+    <ion-avatar class="itemProfileDashborad" (click)="signUpPage()">
+      <img src="../../img/taimoor.jpg">
+    </ion-avatar>
 
   </ion-navbar>
 
@@ -58,7 +34,7 @@
         <ion-input type="text" [(ngModel)]="quizName"></ion-input>
       </ion-item>
 
-     
+
     </ion-list>
 
     <ion-list *ngSwitchWhen="'Question'">
@@ -105,7 +81,6 @@
 
       <button block primary (click)="submitQuizQuestion()">Submit Question</button>
     </ion-list>
-    
+
   </div>
 </ion-content>
-

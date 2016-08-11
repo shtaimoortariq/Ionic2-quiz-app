@@ -4,7 +4,7 @@
 // --------------------------------------------------
 // Makes Ionic Sass functions available to your App
 
-@import "globals.core";
+@import 'globals.core';
 
 // App Shared Variables
 // --------------------------------------------------
@@ -13,7 +13,7 @@
 // variables before Ionic's Sass will use these variables rather than
 // Ionic's default Sass variable values. App Shared Sass imports belong
 // in the app.core.scss file and not this file. Sass variables specific
-// to the mode belong in either the app.ios.scss or app.md.scss files.
+// to the mode belong in the app.ios.scss, app.md.scss, or app.wp.scss files.
 
 
 // App Shared Color Variables
@@ -31,5 +31,8 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  favorite:   #69BB7B
+  favorite:   #69BB7B,
+  twitter:    #53ACEB,
+  github:     #000000,
+  instagram:  #235D8D
 );

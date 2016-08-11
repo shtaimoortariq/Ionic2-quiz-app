@@ -1,34 +1,57 @@
-import {Component} from '@angular/core';
-import {Platform, ionicBootstrap} from 'ionic-angular';
-import {StatusBar} from 'ionic-native';
+import { Component, ViewChild } from '@angular/core';
+
+import { Events, ionicBootstrap, MenuController, Nav, Platform } from 'ionic-angular';
+import { Splashscreen, StatusBar } from 'ionic-native';
+
+
 import {Login} from './pages/login/login';
-import {QuizDetailService} from './services/quizDetailService';
+import {QuizDetailService} from './providers/quizDetailService';
 import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
 
-@Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>'
-})
-
-export class MyApp {
-  rootPage: any = Login;
-
-  constructor(platform: Platform) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-    });
-  }
+interface PageObj {
+  title: string;
+  component: any;
+  icon: string;
+  index?: number;
 }
 
-ionicBootstrap(MyApp, [
+@Component({
+  templateUrl: 'build/app.html'
+})
+class QuizApp {
+
+  @ViewChild(Nav) nav: Nav;
+
+  rootPage: any = Login;
+
+    constructor(
+    platform: Platform
+    
+  ) {
+    // Call any initial plugins when ready
+    platform.ready().then(() => {
+      StatusBar.styleDefault();
+      Splashscreen.hide();
+    });
+
+}
+
+
+};
+
+
+ionicBootstrap(QuizApp, [
+
   FIREBASE_PROVIDERS,
-  // Initialize Firebase app  
   defaultFirebase({
-     apiKey: "AIzaSyCpy3zin1OWfPyFNL_dUwDFwxuMCumUKqw",
-    authDomain: "helloworld-797b6.firebaseapp.com",
-    databaseURL: "https://helloworld-797b6.firebaseio.com",
-    storageBucket: "helloworld-797b6.appspot.com",
+    apiKey: 'AIzaSyCpy3zin1OWfPyFNL_dUwDFwxuMCumUKqw',
+    authDomain: 'helloworld-797b6.firebaseapp.com',
+    databaseURL: 'https://helloworld-797b6.firebaseio.com',
+    storageBucket: 'helloworld-797b6.appspot.com',
   }),
-QuizDetailService
-])
+
+  QuizDetailService
+
+], { });
+
+

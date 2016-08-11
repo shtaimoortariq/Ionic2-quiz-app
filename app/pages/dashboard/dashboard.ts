@@ -1,4 +1,4 @@
-import {Component, Pipe} from "@angular/core";
+import {Component, Pipe} from '@angular/core';
 import {Alert, NavController} from 'ionic-angular';
 
 import {AddQuiz} from '../addquiz/addquiz';
@@ -7,7 +7,7 @@ import {SignUp} from '../signup/signup';
 import {TakeQuiz} from '../takequiz/takequiz';
 import {Profile} from '../profile/profile';
 
-import {QuizDetailService} from '../../services/quizDetailService';
+import {QuizDetailService} from '../../providers/quizDetailService';
 import {AngularFire, FirebaseObjectObservable, FirebaseListObservable} from 'angularfire2';
 
 
@@ -19,17 +19,14 @@ import {AngularFire, FirebaseObjectObservable, FirebaseListObservable} from 'ang
 export class Dashboard {
 
   quiz: FirebaseListObservable<any>;
-  constructor(private nav: NavController, private quizDetailService: QuizDetailService, af: AngularFire) {
+  constructor(private nav: NavController, private quizService: QuizDetailService, af: AngularFire) {
 
    this.inIt();
   }
 
   inIt() {
-    console.log("init");
-    this.quiz = this.quizDetailService.getQuizNames();
-
-    
-
+    console.log('init');
+    this.quiz = this.quizService.getQuizNames();
   }
 
 
